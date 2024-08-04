@@ -54,47 +54,43 @@ function! s:HL(group, fg, ...)
   execute join(histring, ' ')
 endfunction
 
+" Term
+let g:terminal_ansi_colors = [
+	\'#cdaa7d', '#c15959', '#cdaa7d', '#cdaa7d',
+	\'#cdaa7d', '#cdaa7d', '#cdaa7d', '#cdaa7d',
+	\'#cdaa7d', '#cdaa7d', '#cdaa7d', '#cdaa7d',
+	\'#cdaa7d', '#cdaa7d', '#cdaa7d', '#cdaa7d',]:
+
 " Colors
 
 let s:back = ['#161616', 233]
-let s:default = ['#e6c59e', 137]
+let s:default = ['#cdaa7d', 137]
 let s:NONE = ["none", "none"]
 
 let s:margin = ["#262626", 235]
 let s:margin_hover = ["#333333", 236]
 let s:margin_active = ["#404040", 238]
 let s:cursor = ["#40FF40", 83]
+let s:keyword = ["#cd950c", 23]
 let s:highlight = ["#703419", 58]
-let s:at_highlight = ["#CDAA7D", 180]
-let s:mark = ["#808080", 244]
-let s:comment = ["#7D7D7D", 244]
-let s:keyword = ["#CD950C", 172]
-let s:constant = ["#6B8E23", 64]
-let s:preproc = ["#DAB98F", 180]
+let s:comment = ["#7f7f7f", 244]
+let s:blue = ["#191970", 16]
+let s:green = ["#6b8e23", 15]
 let s:special = ["#FF0000", 196]
-let s:bar = ["#CACACA", 251]
-let s:bar_active = ["#A8A8A8", 248]
-let s:base = ["#000000", 16]
-let s:blue = ["#0a1591", 16]
-
 let s:none = ['NONE', 'NONE']
 let s:underline = 'underline,'
 
 call s:HL('Normal', s:default, s:back)
-call s:HL('Visual', s:at_highlight, s:highlight)
-call s:HL('Search', s:at_highlight, s:highlight)
-call s:HL('IncSearch', s:at_highlight, s:highlight)
+call s:HL('Visual', s:default, s:highlight)
+call s:HL('Search', s:default, s:highlight)
+call s:HL('IncSearch', s:default, s:highlight)
 call s:HL('Special', s:default, s:back)
-call s:HL('@punctuation', s:default, s:back)
-call s:HL('@variable', s:default, s:back)
-call s:HL('@keyword.type', s:keyword)
 call s:HL('Directory', s:default)
+call s:HL('String', s:green)
+call s:HL('Visual', s:default, s:blue)
 
 " The column separating vertically split windows
 call s:HL('VertSplit', s:margin_active, s:margin)
-
-" Current match in wildmenu completion
-hi! link WildMenu Search
 
 " Error messages on the command line
 call s:HL('ErrorMsg', s:special, s:back)
@@ -107,8 +103,8 @@ call s:HL('CursorLineNr', s:keyword, s:back)
 call s:HL('NonText', s:back, s:back)
 
 " Character under cursor
-call s:HL('Cursor', s:back, s:cursor)
-call s:HL('CursorLine', s:NONE, s:blue)
+call s:HL('Cursor', s:default, s:cursor)
+call s:HL('CursorLine', s:default, s:blue)
 
 call s:HL('Comment', s:comment)
 call s:HL('Todo', s:keyword, s:back)
@@ -134,7 +130,7 @@ hi! link Identifier Normal
 hi! link Function Statement
 
 " Generic preprocessor
-call s:HL('PreProc', s:preproc)
+call s:HL('PreProc', s:default)
 " Preprocessor #include
 hi! link Include PreProc
 " Preprocessor #define
@@ -144,26 +140,15 @@ hi! link Macro PreProc
 " Preprocessor #if, #else, #endif, etc.
 hi! link PreCondit PreProc
 
-" Generic constant
-call s:HL('Constant', s:constant)
-" Character constant: 'c', '/n'
+call s:HL('Constant', s:default)
 hi! link Character Constant
-" String constant: "this is a string"
-hi! link String Constant
-" Boolean constant: TRUE, false
 hi! link Boolean Constant
-" Number constant: 234, 0xff
 hi! link Number Constant
-" Floating point constant: 2.3e10
 hi! link Float Constant
 
-" Generic type
 hi! link Type Statement
-" static, register, volatile, etc
 hi! link StorageClass Statement
-" struct, union, enum, etc.
 hi! link Structure Statement
-" typedef
 hi! link Typedef Statement
 
 " Completion Menu
@@ -175,26 +160,6 @@ if version >= 700
   hi! link PmenuSel Search
 endif
 
-" Tab
-call s:HL('TabLine', s:base, s:bar)
-call s:HL('TabLineSel', s:base, s:bar_active)
-call s:HL('TabLineFill', s:base, s:bar)
-
-" Sneak
-
-autocmd ColorScheme handmade-hero hi! link Sneak Search
-autocmd ColorScheme handmade-hero hi! link SneakLabel Search
-
-" Vim Multiple Cursors
-
-hi! link multiple_cursors_cursor Cursor
-hi! link multiple_cursors_visual Visual
-
-" Markdown
-
-hi! link markdownH1 Statement
-hi! link markdownH2 Statement
-hi! link markdownH3 Statement
 
 hi! link markdownLinkText Statement
 call s:HL('markdownLinkText', s:keyword, s:back, s:underline)
