@@ -76,9 +76,12 @@ call s:HL('Comment', 'grey', 'none')
 call s:HL('Keyword', 'dyellow', 'none')
 call s:HL('Statement', 'default', 'none')
 call s:HL('StatusLine', 'default', 'lightbg')
+call s:HL('LineNr', 'default', 'none')
+call s:HL('NonText', 'grey', 'none')
+call s:HL('MatchParen', 'default', 'grey')
 
-call s:HL('@punctuation', 'default', 'none')
-call s:HL('@variable', 'default', 'none')
+"call s:HL('@punctuation', 'default', 'none')
+"call s:HL('@variable', 'default', 'none')
 
 hi! link Statement Normal
 hi! link Conditional Statement
