@@ -83,6 +83,11 @@ call s:HL('MatchParen', 'default', 'grey')
 call s:HL('Todo', 'white', 'dyellow')
 call s:HL('Keyword', 'dyellow', 'none')
 
+if has('nvim')
+    call s:HL('@punctuation', 'default', 'none')
+    call s:HL('@variable', 'default', 'none')
+endif
+
 hi! link Statement Normal
 hi! link Conditional Statement
 hi! link Repeat Statement
