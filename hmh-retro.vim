@@ -81,9 +81,7 @@ call s:HL('LineNr', 'default', 'none')
 call s:HL('NonText', 'grey', 'none')
 call s:HL('MatchParen', 'default', 'grey')
 call s:HL('Todo', 'white', 'dyellow')
-
-"call s:HL('@punctuation', 'default', 'none')
-"call s:HL('@variable', 'default', 'none')
+call s:HL('Keyword', 'dyellow', 'none')
 
 hi! link Statement Normal
 hi! link Conditional Statement
@@ -91,7 +89,6 @@ hi! link Repeat Statement
 hi! link Label Statement
 hi! link Exception Statement
 hi! link Operator Normal
-hi! link Keyword Statement
 hi! link Function Statement
 hi! link Identifier Normal
 
