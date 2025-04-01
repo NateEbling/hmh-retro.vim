@@ -11,7 +11,7 @@ let g:colors_name="hmh"
 " Colors {{{
 let s:col              = {}
 let s:col.default      = ['#cdaa7d', 137]
-let s:col.bg 	       = ['#161616', 233]
+let s:col.back 	       = ['#161616', 233]
 let s:col.lightbg      = ['#BEBEBE', 233]
 let s:col.neongreen    = ['#40ff40', 83]
 let s:col.dyellow      = ['#cd950c', 23]
@@ -65,7 +65,7 @@ endfunction
 " }}}
 
 " Highlights {{{
-call s:HL('Normal', 'default', 'bg')
+call s:HL('Normal', 'default', 'back')
 call s:HL('Special', 'default', 'none')
 call s:HL('Directory', 'default', 'none')
 call s:HL('String', 'green', 'none')
@@ -78,7 +78,7 @@ call s:HL('Keyword', 'dyellow', 'none')
 call s:HL('Statement', 'default', 'none')
 call s:HL('StatusLine', 'default', 'lightbg')
 call s:HL('LineNr', 'default', 'none')
-call s:HL('NonText', 'grey', 'bg')
+call s:HL('NonText', 'grey', 'back')
 call s:HL('MatchParen', 'default', 'grey')
 call s:HL('Todo', 'white', 'dyellow')
 call s:HL('Keyword', 'dyellow', 'none')
