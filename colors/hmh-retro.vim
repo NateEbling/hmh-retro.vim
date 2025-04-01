@@ -114,7 +114,7 @@ hi! link Structure Statement
 hi! link Typedef Statement
 
 if has('nvim')
-  let g:terminal_color_0 = s:col.bg[0]
+  let g:terminal_color_0 = s:col.back[0]
   let g:terminal_color_8 = s:col.default[0]
 
   let g:terminal_color_1 = s:col.red[0]
