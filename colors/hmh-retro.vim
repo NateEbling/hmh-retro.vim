@@ -66,7 +66,7 @@ endfunction
 " }}}
 
 " Highlights {{{
-call s:HL('Normal', 'default', 'back')
+call s:HL('Normal', 'default', 'none')
 call s:HL('Special', 'default', 'none')
 call s:HL('Directory', 'default', 'none')
 call s:HL('String', 'green', 'none')
