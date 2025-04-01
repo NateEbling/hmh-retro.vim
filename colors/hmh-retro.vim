@@ -65,7 +65,7 @@ endfunction
 " }}}
 
 " Highlights {{{
-call s:HL('Normal', 'default', 'none')
+call s:HL('Normal', 'default', 'bg')
 call s:HL('Special', 'default', 'none')
 call s:HL('Directory', 'default', 'none')
 call s:HL('String', 'green', 'none')
@@ -78,7 +78,7 @@ call s:HL('Keyword', 'dyellow', 'none')
 call s:HL('Statement', 'default', 'none')
 call s:HL('StatusLine', 'default', 'lightbg')
 call s:HL('LineNr', 'default', 'none')
-call s:HL('NonText', 'grey', 'none')
+call s:HL('NonText', 'grey', 'bg')
 call s:HL('MatchParen', 'default', 'grey')
 call s:HL('Todo', 'white', 'dyellow')
 call s:HL('Keyword', 'dyellow', 'none')
