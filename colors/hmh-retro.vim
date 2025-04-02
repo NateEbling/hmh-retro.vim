@@ -90,7 +90,7 @@ call s:HL('DiffChange', 'dyellow', 'none')
 call s:HL('DiffDelete', 'red', 'none')
 call s:HL('DiffText', 'default', 'none')
 call s:HL('QuickFixLine', 'default', 'none')
-call s:HL('DiagnosticInfo, 'grey', 'none')
+call s:HL('DiagnosticInfo', 'grey', 'none')
 call s:HL('Changed', 'dyellow', 'none')
 
 if has('nvim')
