@@ -10,7 +10,7 @@ let g:colors_name="hmh"
 " }}}
 " Colors {{{
 let s:col              = {}
-let s:col.default      = ['#cdaa7d']
+let s:col.default      = ['#cdaa7d', 0]
 let s:col.back 	       = ['#161616', 0]
 let s:col.lightbg      = ['#BEBEBE', 0]
 let s:col.neongreen    = ['#40ff40', 0]
