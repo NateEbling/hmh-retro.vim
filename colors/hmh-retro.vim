@@ -99,6 +99,7 @@ if has('nvim')
     call s:HL('@punctuation', 'default', 'none')
     call s:HL('@variable', 'default', 'none')
     call s:HL('@keyword.import.c', 'default', 'none')
+    call s:HL('@keyword.directive.cpp', 'default', 'none')
 endif
 
 hi! link Statement Normal
