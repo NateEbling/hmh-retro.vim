@@ -96,6 +96,7 @@ call s:HL('Changed', 'dyellow', 'none')
 if has('nvim')
     call s:HL('@punctuation', 'default', 'none')
     call s:HL('@variable', 'default', 'none')
+    call s:HL('@keyword.import.c', 'default', 'none')
 endif
 
 hi! link Statement Normal
