@@ -10,17 +10,18 @@ let g:colors_name="hmh"
 " }}}
 " Colors {{{
 let s:col              = {}
-let s:col.default      = ['#cdaa7d', 137]
-let s:col.back 	       = ['#161616', 233]
-let s:col.lightbg      = ['#BEBEBE', 233]
-let s:col.neongreen    = ['#40ff40', 83]
-let s:col.dyellow      = ['#cd950c', 23]
-let s:col.grey         = ['#7f7f7f', 244]
-let s:col.blue         = ['#191970', 16]
-let s:col.green        = ['#6b8e23', 15]
-let s:col.red          = ['#ff0000', 196]
-let s:col.white        = ['#ffffff', 16]
-let s:col.black        = ['#000000', 16]
+let s:col.default      = ['#cdaa7d']
+let s:col.back 	       = ['#161616', 0]
+let s:col.lightbg      = ['#BEBEBE', 0]
+let s:col.neongreen    = ['#40ff40', 0]
+let s:col.dyellow      = ['#cd950c', 0]
+let s:col.grey         = ['#7f7f7f', 0]
+let s:col.blue         = ['#191970', 0]
+let s:col.green        = ['#6b8e23', 0]
+let s:col.cyan         = ['#00ffff', 0]
+let s:col.red          = ['#ff0000', 0]
+let s:col.white        = ['#ffffff', 0]
+let s:col.black        = ['#000000', 0]
 let s:col.none         = ['NONE', 'NONE']
 let s:underline        = 'underline'
 
@@ -92,6 +93,7 @@ call s:HL('DiffText', 'default', 'none')
 call s:HL('QuickFixLine', 'default', 'none')
 call s:HL('DiagnosticInfo', 'grey', 'none')
 call s:HL('Changed', 'dyellow', 'none')
+call s:HL('MsgArea', 'cyan', 'none')
 
 if has('nvim')
     call s:HL('@punctuation', 'default', 'none')
