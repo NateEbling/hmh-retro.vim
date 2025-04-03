@@ -17,6 +17,7 @@ let s:col.neongreen    = ['#40ff40', 0]
 let s:col.dyellow      = ['#cd950c', 0]
 let s:col.grey         = ['#7f7f7f', 0]
 let s:col.blue         = ['#191970', 0]
+let s:col.lblue        = ['#4F94CC', 0]
 let s:col.green        = ['#6b8e23', 0]
 let s:col.cyan         = ['#00ffff', 0]
 let s:col.red          = ['#ff0000', 0]
@@ -81,7 +82,7 @@ call s:HL('Statement', 'default', 'none')
 call s:HL('StatusLine', 'black', 'lightbg', 'bold')
 call s:HL('LineNr', 'default', 'none')
 call s:HL('NonText', 'grey', 'none')
-call s:HL('MatchParen', 'default', 'grey')
+call s:HL('MatchParen', 'default', 'lblue')
 call s:HL('Todo', 'red', 'none')
 call s:HL('Keyword', 'dyellow', 'none')
 call s:HL('Question', 'default', 'none')
