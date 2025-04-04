@@ -17,6 +17,7 @@ let s:col.neongreen    = ['#40ff40', 0]
 let s:col.dyellow      = ['#cd950c', 0]
 let s:col.grey         = ['#7f7f7f', 0]
 let s:col.blue         = ['#191970', 0]
+let s:col.blue2        = ['#0000CC', 0]
 let s:col.lblue        = ['#4F94CC', 0]
 let s:col.green        = ['#6b8e23', 0]
 let s:col.cyan         = ['#00ffff', 0]
@@ -72,7 +73,7 @@ call s:HL('Normal', 'default', 'none')
 call s:HL('Special', 'default', 'none')
 call s:HL('Directory', 'default', 'none')
 call s:HL('String', 'green', 'none')
-call s:HL('Visual', 'default', 'blue')
+call s:HL('Visual', 'none', 'blue2')
 call s:HL('ErrorMsg', 'red', 'none')
 call s:HL('Cursor', 'none', 'neongreen')
 call s:HL('CursorLine', 'none', 'blue')
