@@ -16,6 +16,7 @@ let s:col.lightbg      = ['#BEBEBE', 0]
 let s:col.neongreen    = ['#40ff40', 0]
 let s:col.dyellow      = ['#cd950c', 0]
 let s:col.grey         = ['#7f7f7f', 0]
+let s:col.grey2        = ['#4D4D4D', 0]
 let s:col.blue         = ['#191970', 0]
 let s:col.blue2        = ['#0000CC', 0]
 let s:col.lblue        = ['#4F94CC', 0]
@@ -80,7 +81,8 @@ call s:HL('CursorLine', 'none', 'blue')
 call s:HL('Comment', 'grey', 'none')
 call s:HL('Keyword', 'dyellow', 'none')
 call s:HL('Statement', 'default', 'none')
-call s:HL('StatusLine', 'black', 'lightbg', 'bold')
+call s:HL('StatusLine', 'black', 'lightbg')
+call s:HL('StatusLineNC', black', 'grey2')
 call s:HL('LineNr', 'default', 'none')
 call s:HL('NonText', 'grey', 'none')
 call s:HL('MatchParen', 'default', 'lblue')
