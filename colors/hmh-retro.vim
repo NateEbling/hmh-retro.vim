@@ -95,6 +95,7 @@ call s:HL('QuickFixLine', 'default', 'none')
 call s:HL('DiagnosticInfo', 'grey', 'none')
 call s:HL('Changed', 'dyellow', 'none')
 call s:HL('MsgArea', 'cyan', 'none')
+call s:HL('ModeMsg', 'default', 'none')
 
 if has('nvim')
     call s:HL('@punctuation', 'default', 'none')
