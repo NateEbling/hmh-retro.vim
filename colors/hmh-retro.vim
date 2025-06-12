@@ -25,6 +25,7 @@ let s:col.cyan         = ['#00ffff', 0]
 let s:col.red          = ['#ff0000', 0]
 let s:col.white        = ['#ffffff', 0]
 let s:col.black        = ['#000000', 0]
+let s:col.grey3        = ['#2e2e2e', 0]
 let s:col.none         = ['NONE', 'NONE']
 let s:underline        = 'underline'
 
@@ -83,7 +84,7 @@ call s:HL('Keyword', 'dyellow', 'none')
 call s:HL('Statement', 'default', 'none')
 call s:HL('StatusLine', 'black', 'lightbg')
 call s:HL('StatusLineNC', 'black', 'grey2')
-call s:HL('ColorColumn', 'default', 'lightbg')
+call s:HL('ColorColumn', 'default', 'grey3')
 call s:HL('LineNr', 'default', 'none')
 call s:HL('NonText', 'grey', 'none')
 call s:HL('MatchParen', 'default', 'lblue')
