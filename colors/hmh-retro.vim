@@ -47,7 +47,7 @@ hi Identifier      guibg=#161616    guifg=#cdaa7d
 hi Function        guibg=#161616    guifg=#cdaa7d
 hi Statement       guibg=#161616    guifg=#cdaa7d
 
-hi Conditional     guibg=#161616    guifg=#cdaa7d
+hi Conditional     guibg=#161616    guifg=#cd950c
 hi Repeat          guibg=#161616    guifg=#cdaa7d
 hi Label           guibg=#161616    guifg=#cdaa7d
 hi Operator        guibg=#161616    guifg=#cdaa7d
@@ -62,7 +62,7 @@ hi link            PreCondit        Include
 
 hi Type            guibg=#161616    guifg=#cdaa7d
 hi StorageClass    guibg=#161616    guifg=#cdaa7d
-hi Structure       guibg=#161616    guifg=#cdaa7d
+hi Structure       guibg=#161616    guifg=#cd950c
 hi Typedef         guibg=#161616    guifg=#cdaa7d
 
 hi Special         guibg=#161616    guifg=#cdaa7d
