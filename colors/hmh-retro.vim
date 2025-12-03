@@ -31,7 +31,7 @@ hi VertSplit       guibg=#161616    guifg=#cdaa7d    cterm=none
 hi DiffAdd         guibg=NONE       guifg=#6b8e23
 hi DiffChange      guibg=NONE       guifg=#cd950c
 hi DiffDelete      guibg=NONE       guifg=#ff0000
-hi DiffText        guibg=NONE       guifg=#cdaa7d
+hi DiffText        guibg=NONE       guifg=#cdaa7d    cterm=none
 
 " Colors for Syntax Highlighting.
 hi Comment         guibg=#161616    guifg=#7f7f7f
@@ -43,7 +43,7 @@ hi Number          guibg=#161616    guifg=#cdaa7d
 hi Boolean         guibg=#161616    guifg=#cdaa7d
 hi Float           guibg=#161616    guifg=#cdaa7d
 
-hi Identifier      guibg=#161616    guifg=#cdaa7d
+hi Identifier      guibg=#161616    guifg=#cdaa7d    cterm=none
 hi Function        guibg=#161616    guifg=#cdaa7d
 hi Statement       guibg=#161616    guifg=#cdaa7d
 
