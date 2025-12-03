@@ -13,7 +13,7 @@ hi Visual          guibg=#0000cc    guifg=NONE
 hi Linenr          guibg=#161616    guifg=#cdaa7d
 hi Directory       guibg=#161616    guifg=#cdaa7d
 hi IncSearch       guibg=#161616    guifg=#cdaa7d
-hi Link            Search           IncSearch
+hi link            Search           IncSearch
 
 hi SpecialKey      guibg=#161616    guifg=#cdaa7d
 hi Titled          guibg=#161616    guifg=#cdaa7d
