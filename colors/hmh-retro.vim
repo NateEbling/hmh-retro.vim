@@ -8,7 +8,7 @@ syntax reset
 hi Cursor          guibg=#40ff40    guifg=#000000
 hi CursorLine      guibg=#191970    guifg=NONE
 hi Normal          guibg=#161616    guifg=#cdaa7d
-hi NonText         guibg=#161616    guifg=#7f7f7f
+hi NonText         guibg=#161616    guifg=#bebebe
 hi Visual          guibg=#0000cc    guifg=NONE
 hi Linenr          guibg=#161616    guifg=#cdaa7d
 hi Directory       guibg=#161616    guifg=#cdaa7d
@@ -20,7 +20,7 @@ hi Titled          guibg=#161616    guifg=#cdaa7d
 
 hi ErrorMsg        guibg=#161616    guifg=#ff0000
 hi ModeMsg         guibg=#161616    guifg=#00ffff
-hi link            MoreMsg          ModeMsg
+hi MoreMsg         guibg=#161616    guifg=#00ffff
 hi Question        guibg=#161616    guifg=#cdaa7d
 hi link            WarningMsg       ErrorMsg
 
@@ -28,10 +28,10 @@ hi StatusLine      guibg=#bebebe    guifg=#000000    cterm=none
 hi StatusLineNC    guibg=#4d4d4d    guifg=#000000    cterm=none
 hi VertSplit       guibg=#161616    guifg=#cdaa7d    cterm=none
 
-hi DiffAdd         guibg=#446688    guifg=fg
-hi DiffChange      guibg=#558855    guifg=fg
-hi DiffDelete      guibg=#884444    guifg=fg
-hi DiffText        guibg=#884444    guifg=fg
+hi DiffAdd         guibg=NONE       guifg=#6b8e23
+hi DiffChange      guibg=NONE       guifg=#cd950c
+hi DiffDelete      guibg=NONE       guifg=#ff0000
+hi DiffText        guibg=NONE       guifg=#cdaa7d
 
 " Colors for Syntax Highlighting.
 hi Comment         guibg=#161616    guifg=#7f7f7f
@@ -98,14 +98,6 @@ hi link            rustAttribute    Number
 hi link            rustDerive       Number
 hi link            rustIdentifier   Function
 hi link            rustFuncName     Function
-
-" Python
-hi link            pythonFunction   Function
-hi link            pythonNumber     Number
-hi link            pythonInclude    Keyword
-hi link            pythonConditional    Keyword
-hi link            pythonException  Keyword
-hi link            pythonStatement  Keyword
 
 " And finally.
 let g:colors_name = "hmh"
