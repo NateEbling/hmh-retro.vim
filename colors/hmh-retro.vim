@@ -1,164 +1,111 @@
-" hmh.vim
+colorscheme by Nate Ebling
 
-" Setup {{{
-hi clear
-if exists("syntax_on")
-  syntax reset
-endif
 set background=dark
-let g:colors_name="hmh"
-" }}}
-" Colors {{{
-let s:col              = {}
-let s:col.default      = ['#cdaa7d', 0]
-let s:col.back 	       = ['#161616', 0]
-let s:col.lightbg      = ['#BEBEBE', 0]
-let s:col.neongreen    = ['#40ff40', 0]
-let s:col.dyellow      = ['#cd950c', 0]
-let s:col.grey         = ['#7f7f7f', 0]
-let s:col.grey2        = ['#4D4D4D', 0]
-let s:col.blue         = ['#191970', 0]
-let s:col.blue2        = ['#0000CC', 0]
-let s:col.lblue        = ['#4F94CC', 0]
-let s:col.green        = ['#6b8e23', 0]
-let s:col.cyan         = ['#00ffff', 0]
-let s:col.red          = ['#ff0000', 0]
-let s:col.white        = ['#ffffff', 0]
-let s:col.black        = ['#000000', 0]
-let s:col.grey3        = ['#2e2e2e', 0]
-let s:col.none         = ['NONE', 'NONE']
-let s:underline        = 'underline'
+hi clear
+syntax reset
 
-" }}}
+" Colors for the User Interface.
+hi Cursor          guibg=#40ff40    guifg=#000000
+hi CursorLine      guibg=#191970    guifg=NONE
+hi Normal          guibg=#161616    guifg=#cdaa7d
+hi NonText         guibg=#161616    guifg=#7f7f7f
+hi Visual          guibg=#0000cc    guifg=NONE
+hi Linenr          guibg=#161616    guifg=#cdaa7d
+hi Directory       guibg=#161616    guifg=#cdaa7d
+hi IncSearch       guibg=#161616    guifg=#cdaa7d
+hi Link            Search           IncSearch
 
-" Highlighting Function from https://github.com/sjl/badwolf {{{
-function! s:HL(group, fg, ...)
-    " Arguments: group, guifg, guibg, gui, guisp
+hi SpecialKey      guibg=#161616    guifg=#cdaa7d
+hi Titled          guibg=#161616    guifg=#cdaa7d
 
-    let histring = 'hi ' . a:group . ' '
+hi ErrorMsg        guibg=#161616    guifg=#ff0000
+hi ModeMsg         guibg=#161616    guifg=#00ffff
+hi link            MoreMsg          ModeMsg
+hi Question        guibg=#161616    guifg=#cdaa7d
+hi link            WarningMsg       ErrorMsg
 
-    if strlen(a:fg)
-        if a:fg == 'fg'
-            let histring .= 'guifg=fg ctermfg=fg '
-        else
-            let c = get(s:col, a:fg)
-            let histring .= 'guifg=' . c[0] . ' ctermfg=' . c[1] . ' '
-        endif
-    endif
+hi StatusLine      guibg=#bebebe    guifg=#000000    cterm=none
+hi StatusLineNC    guibg=#4d4d4d    guifg=#000000    cterm=none
+hi VertSplit       guibg=#161616    guifg=#cdaa7d    cterm=none
 
-    if a:0 >= 1 && strlen(a:1)
-        if a:1 == 'bg'
-            let histring .= 'guibg=bg ctermbg=bg '
-        else
-            let c = get(s:col, a:1)
-            let histring .= 'guibg=' . c[0] . ' ctermbg=' . c[1] . ' '
-        endif
-    endif
+hi DiffAdd         guibg=#446688    guifg=fg
+hi DiffChange      guibg=#558855    guifg=fg
+hi DiffDelete      guibg=#884444    guifg=fg
+hi DiffText        guibg=#884444    guifg=fg
 
-    if a:0 >= 2 && strlen(a:2)
-        let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
-    endif
+" Colors for Syntax Highlighting.
+hi Comment         guibg=#161616    guifg=#7f7f7f
 
-    if a:0 >= 3 && strlen(a:3)
-        let c = get(s:col, a:3)
-        let histring .= 'guisp=' . c[0] . ' '
-    endif
+hi Constant        guibg=#161616    guifg=#cdaa7d
+hi String          guibg=#161616    guifg=#6b8e23
+hi Character       guibg=#161616    guifg=#cdaa7d
+hi Number          guibg=#161616    guifg=#cdaa7d
+hi Boolean         guibg=#161616    guifg=#cdaa7d
+hi Float           guibg=#161616    guifg=#cdaa7d
 
-    " echom histring
+hi Identifier      guibg=#161616    guifg=#cdaa7d
+hi Function        guibg=#161616    guifg=#0030f2
+hi Statement       guibg=#161616    guifg=#cdaa7d
 
-    execute histring
-endfunction
-" }}}
+hi Conditional     guibg=#161616    guifg=#cdaa7d
+hi Repeat          guibg=#161616    guifg=#cdaa7d
+hi Label           guibg=#161616    guifg=#cdaa7d
+hi Operator        guibg=#161616    guifg=#cdaa7d
+hi Keyword         guibg=#161616    guifg=#cd950c
+hi Exception       guibg=#161616    guifg=#cdaa7d
 
-" Highlights {{{
-call s:HL('Normal', 'default', 'none')
-call s:HL('Special', 'default', 'none')
-call s:HL('Directory', 'default', 'none')
-call s:HL('String', 'green', 'none')
-call s:HL('Visual', 'none', 'blue2')
-call s:HL('ErrorMsg', 'red', 'none')
-call s:HL('Cursor', 'none', 'neongreen')
-call s:HL('CursorLine', 'none', 'blue')
-call s:HL('Comment', 'grey', 'none')
-call s:HL('Keyword', 'dyellow', 'none')
-call s:HL('Statement', 'default', 'none')
-call s:HL('StatusLine', 'black', 'lightbg')
-call s:HL('StatusLineNC', 'black', 'grey2')
-call s:HL('ColorColumn', 'default', 'grey3')
-call s:HL('LineNr', 'default', 'none')
-call s:HL('NonText', 'grey', 'none')
-call s:HL('MatchParen', 'default', 'lblue')
-call s:HL('Todo', 'red', 'none')
-call s:HL('Keyword', 'dyellow', 'none')
-call s:HL('Question', 'default', 'none')
-call s:HL('MoreMsg', 'dyellow', 'none')
-call s:HL('DiffAdd', 'green', 'none')
-call s:HL('DiffChange', 'dyellow', 'none')
-call s:HL('DiffDelete', 'red', 'none')
-call s:HL('DiffText', 'default', 'none')
-call s:HL('QuickFixLine', 'default', 'none')
-call s:HL('DiagnosticInfo', 'grey', 'none')
-call s:HL('Changed', 'dyellow', 'none')
-call s:HL('MsgArea', 'cyan', 'none')
-call s:HL('ModeMsg', 'default', 'none')
+hi PreProc         guibg=#161616    guifg=#cdaa7d
+hi Include         guibg=#161616    guifg=#cdaa7d
+hi link            Define           Include
+hi link            Macro            Include
+hi link            PreCondit        Include
 
-if has('nvim')
-    call s:HL('@punctuation', 'default', 'none')
-    call s:HL('@variable', 'default', 'none')
-    call s:HL('@keyword.import.c', 'default', 'none')
-    call s:HL('@keyword.directive.cpp', 'default', 'none')
-    call s:HL('@keyword.directive.define.cpp', 'default', 'none')
-    call s:HL('@keyword.import.cpp', 'default', 'none')
-endif
+hi Type            guibg=#161616    guifg=#cdaa7d
+hi StorageClass    guibg=#161616    guifg=#cdaa7d
+hi Structure       guibg=#161616    guifg=#cdaa7d
+hi Typedef         guibg=#161616    guifg=#cdaa7d
 
-hi! link Statement Normal
-hi! link Conditional Statement
-hi! link Repeat Statement
-hi! link Label Statement
-hi! link Exception Statement
-hi! link Operator Normal
-hi! link Function Statement
-hi! link Identifier Normal
+hi Special         guibg=#161616    guifg=#cdaa7d
+hi SpecialChar     guibg=#161616    guifg=#cdaa7d
+hi Tag             guibg=#161616    guifg=#cdaa7d
+hi Delimiter       guibg=#161616    guifg=#cdaa7d
+hi SpecialComment  guibg=#161616    guifg=#cdaa7d
+hi Debug           guibg=#161616    guifg=#cdaa7d
 
-hi! link PreProc Normal
-hi! link Include PreProc
-hi! link Macro PreProc
-hi! link PreCondit PreProc
+hi Title           guibg=#161616    guifg=#cdaa7d
+hi Ignore          guibg=#161616    guifg=#cdaa7d
+hi Error           guibg=#161616    guifg=#ff0000
+hi Todo            guibg=#161616    guifg=#ff0000
+hi MatchParen      guibg=#4f94cc    guifg=#cdaa7d
 
-hi! link Constant Normal
-hi! link Character Normal
-hi! link Boolean Normal
-hi! link Number Normal
-hi! link Float Normal
+" Language-specific highlights
+" C
+hi link            cStructure       Structure
+hi link            cType            Type
+hi link            cNumbers         Number
+hi link            cFloat           Float
+hi link            cStatement       Keyword
+hi link            cStorageClass    Keyword
 
-hi! link Type Statement
-hi! link StorageClass Statement
-hi! link Structure Statement
-hi! link Typedef Statement
+" Rust
+hi link            rustStorage      Keyword
+hi link            rustSelf         Keyword
+hi link            rustTrait        Number
+hi link            rustMacro        Number
+hi link            rustType         Number
+hi link            rustDecNumber    Number
+hi link            rustAttribute    Number
+hi link            rustDerive       Number
+hi link            rustIdentifier   Function
+hi link            rustFuncName     Function
 
-if has('nvim')
-  let g:terminal_color_0 = s:col.back[0]
-  let g:terminal_color_8 = s:col.default[0]
+" Python
+hi link            pythonFunction   Function
+hi link            pythonNumber     Number
+hi link            pythonInclude    Keyword
+hi link            pythonConditional    Keyword
+hi link            pythonException  Keyword
+hi link            pythonStatement  Keyword
 
-  let g:terminal_color_1 = s:col.red[0]
-  let g:terminal_color_9 = s:col.red[0]
-
-  let g:terminal_color_2 = s:col.default[0]
-  let g:terminal_color_10 = s:col.default[0]
-
-  let g:terminal_color_3 = s:col.neongreen[0]
-  let g:terminal_color_11 = s:col.neongreen[0]
-
-  let g:terminal_color_4 = s:col.default[0]
-  let g:terminal_color_12 = s:col.default[0]
-
-  let g:terminal_color_5 = s:col.default[0]
-  let g:terminal_color_13 = s:col.default[0]
-
-  let g:terminal_color_6 = s:col.default[0]
-  let g:terminal_color_14 = s:col.default[0]
-
-  let g:terminal_color_7 = s:col.default[0]
-  let g:terminal_color_15 = s:col.default[0]
-endif
-" }}}
+" And finally.
+let g:colors_name = "hmh"
