@@ -44,7 +44,7 @@ hi Boolean         guibg=#161616    guifg=#cdaa7d
 hi Float           guibg=#161616    guifg=#cdaa7d
 
 hi Identifier      guibg=#161616    guifg=#cdaa7d
-hi Function        guibg=#161616    guifg=#0030f2
+hi Function        guibg=#161616    guifg=#cdaa7d
 hi Statement       guibg=#161616    guifg=#cdaa7d
 
 hi Conditional     guibg=#161616    guifg=#cdaa7d
